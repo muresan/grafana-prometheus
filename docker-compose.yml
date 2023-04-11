@@ -4,6 +4,8 @@ services:
   prometheus:
     image: prom/prometheus
     restart: unless-stopped
+    volumes:
+      - ${PWD}/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
     - "9090:9090"
 
